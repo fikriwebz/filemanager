@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://192.168.18.5:5709/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whatsapp 0 Imune by F1KR7</title>
+    <link href="./stop-server_files/font-awesome.min.css" rel="stylesheet" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk= sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stop-server_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./stop-server_files/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <center><p>Whatsapp 0 Imune by F1KR7</p></center>
+      <div id="power-off" class="btn btn-primary btn-lg">
+        Download Now
+      </div>
+    </div>
+    <script type="text/javascript" src="./stop-server_files/jquery.min.js.download"></script>
+    <script>
+      function post(route) {
+        if (confirm('File berukuran 29MB, apakah anda ingin download?')) {
+          $.post(route)
+            .fail(function (jqXHR) {
+              if (jqXHR.status === 0) return alert('Can\'t connect to server')
+              alert(jqXHR.responseJSON.error)
+            })
+        }
+      }
+
+      $('#power-off').on('click', function () {
+        post('/power-off')
+      })
+
+      $('#sleep').on('click', function () {
+        post('/sleep')
+      })
+
+      $.get('update', function (update) {
+        if (update.type && update.type === 'latest') {
+          $('footer a').append(' (new version available)')
+        }
+      })
+    </script>
+
+  
+
+</body></html>
